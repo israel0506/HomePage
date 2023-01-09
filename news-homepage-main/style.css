@@ -62,6 +62,7 @@ a:hover {
     width: 740px;
     margin-top: 40px;
     margin-left: 90px;
+    animation: imgToSwing 0.3s ease-out;
 }
 
 #container-l p {
@@ -195,18 +196,17 @@ hr {
     .mobile-menu {
         position: absolute;
         right: 10px;
-        top: 10vh;
+        top: 50px;
         display: block;
-        background-color:
     }
 
     .nav-list {
         position: absolute;
-        top: 7vh;
+        top: -10px;
         width: 50vw;
         margin-left: -545px;
         background-color:  hsl(240, 100%, 5%);
-        height: 75vh;
+        height: 84vh;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
@@ -241,16 +241,18 @@ hr {
         }
       }
 
-    .mobile-menu.active .line1 {
+    .mobile-menu.active .line-1 {
         transform: rotate(-45deg) translate(-8px, 8px);
+        transition: 0.3s;
       }
       
-      .mobile-menu.active .line2 {
+      .mobile-menu.active .line-2 {
         opacity: 0;
       }
       
-      .mobile-menu.active .line3 {
+      .mobile-menu.active .line-3 {
         transform: rotate(45deg) translate(-5px, -7px);
+        transition: 0.3s;
       }
 
 
@@ -283,7 +285,7 @@ hr {
         margin-left: 15px;
         margin-top: -50px;
         width: 320px;
-        height: 520px;
+        height: 450px;
     }
 
     #news img {
@@ -303,6 +305,21 @@ hr {
     #news-2, #news-3 {
         margin-left: 20px;
         margin-top: -40px;
+    }
+
+    @keyframes imgToSwing {
+        0% {
+            transform: translateX(0px);
+        }
+        25% {
+            transform: translateX(10px);
+        }
+        50% {
+            transform: translateX(-10px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
     }
 
 }
